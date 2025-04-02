@@ -3,6 +3,9 @@ from pdf_utils import extract_pdf_files
 from model_utils import build_indices, retrieve_relevant_chunks_multi, query_gemini
 from chat_prompt import create_prompt
 
+import os
+os.environ["TRANSFORMERS_OFFLINE"] = "1"
+
 def main():
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
